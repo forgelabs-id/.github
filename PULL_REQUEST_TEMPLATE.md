@@ -1,47 +1,39 @@
-# type(scope): ringkasan perubahan
+# type(scope): summary of the change
 
 ## Summary
 
-<!-- Satu paragraf: apa yang berubah dan masalah apa yang diselesaikan. Sebutkan bila
-     ada bagian yang sengaja tidak disentuh. -->
+<!-- One paragraph: what changes and why it resolves the problem below. Mention what the
+     diff cannot show when it matters: changed defaults, deliberate failures, ordering
+     that must hold, values generated at render time. -->
 
 Closes #
 
+## Problem
+
+<!-- What is broken, missing or risky today, with evidence where possible: path:line,
+     command output, numbers.
+
+     This is also the section that justifies merging to main: state what stays broken
+     for everyone until this lands, and what carrying it on a branch costs. -->
+
 ## Scope
 
-<!-- Angka nyata: jumlah file dan baris. Tabel dipakai kalau membantu. -->
+<!-- Real numbers: files and lines changed. Name the components touched, the ones
+     intentionally excluded, and any work deferred to a separate change. -->
 
-## Behaviour yang perlu diperhatikan reviewer
+## Verification
 
-<!-- Hal yang tidak terlihat dari diff: default yang berubah, kegagalan yang disengaja,
-     urutan yang harus dijaga, nilai yang digenerate saat render. -->
+<!-- Commands actually executed and what they returned. An empty table means untested. -->
 
--
-## Verifikasi
-
-<!-- Perintah yang benar-benar dijalankan beserta hasilnya. Tabel kosong berarti belum diuji.
-
-     | Perintah | Hasil |
-     | --- | --- | -->
-
-| Perintah | Hasil |
+| Command | Result |
 | --- | --- |
 |  |  |
 
-## Cara deploy setelah merge
-
-<!-- Hapus bagian ini kalau tidak ada langkah manual. Urutkan perintahnya. -->
-
-## Follow-up di luar MR ini
-
-<!-- Pekerjaan yang sengaja ditunda, beserta alasannya. -->
-
--
 ## Checklist
 
-- [ ] Commit testable sendiri, tanpa squash
-- [ ] Tidak ada kredensial, token, atau key yang ikut ter-commit
-- [ ] Variabel konfigurasi baru terdokumentasi di tempat ia dibaca
-- [ ] Test gagal sebelum perubahan dan lulus sesudahnya
-- [ ] Urutan rollout disebut kalau menyentuh lebih dari satu service
-- [ ] Review read-only terhadap dokumen desain, bila dokumennya sudah beku
+- [ ] Commits are testable on their own, nothing squashed
+- [ ] No credentials, tokens or keys committed
+- [ ] New configuration documented where it is consumed
+- [ ] Tests fail without the change and pass with it
+- [ ] Rollout order stated when more than one service is involved
+- [ ] Reviewed read-only against the design document when that document is frozen
