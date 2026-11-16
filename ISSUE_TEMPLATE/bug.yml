@@ -1,0 +1,87 @@
+name: Bug
+description: Something does not behave as expected
+title: "bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Provide measured evidence, not guesses. Include file paths with line
+        numbers, logs, or command output. Without evidence this is a suspicion,
+        not a bug.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: One paragraph. What is broken, and who is affected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+      placeholder: |
+        Expected: ...
+        Actual: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, stack traces, screenshots, or command output.
+      render: shell
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Branch or commit, package versions, OS and host.
+      placeholder: "feat/container-isolation @ b127371, Node 22, Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - Low — cosmetic or edge case
+        - Medium — feature degraded, workaround exists
+        - High — main feature down or data at risk
+        - Critical — security, data loss, or production down
+    validations:
+      required: true
+
+  - type: textarea
+    id: suspected
+    attributes:
+      label: Suspected cause (optional)
+      description: If known, cite path and line. Otherwise leave empty.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched for existing issues and found none
+          required: true
+        - label: I reproduced this at least twice
+          required: true

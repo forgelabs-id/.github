@@ -1,0 +1,57 @@
+name: Documentation
+description: Docs are wrong, stale, or missing
+title: "docs: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: File path or URL, naming the section or heading.
+      placeholder: "README.md > Installation"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of problem
+      options:
+        - Wrong — content does not match reality
+        - Stale — was true when written, no longer is
+        - Missing — needed but absent
+        - Unclear — present but hard to follow
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or missing
+      description: Quote the offending passage where possible.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Proposed fix
+      description: Replacement text, a new section, or the correct source to cite.
+    validations:
+      required: true
+
+  - type: input
+    id: affected
+    attributes:
+      label: Who is affected
+      placeholder: "operators during install, new contributors"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked the other docs in this repo, this is not a duplicate
+          required: true
